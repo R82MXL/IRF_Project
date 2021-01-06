@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.genderCmBox = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.btnRead = new System.Windows.Forms.Button();
             this.btnWrite = new System.Windows.Forms.Button();
@@ -47,13 +47,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Gender";
             // 
-            // comboBox1
+            // genderCmBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(124, 21);
-            this.comboBox1.TabIndex = 1;
+            this.genderCmBox.FormattingEnabled = true;
+            this.genderCmBox.Location = new System.Drawing.Point(12, 57);
+            this.genderCmBox.Name = "genderCmBox";
+            this.genderCmBox.Size = new System.Drawing.Size(124, 21);
+            this.genderCmBox.TabIndex = 1;
+            this.genderCmBox.SelectionChangeCommitted += new System.EventHandler(this.genderCmBox_SelectionChangeCommitted);
             // 
             // dataGridView
             // 
@@ -72,6 +73,7 @@
             this.btnRead.TabIndex = 3;
             this.btnRead.Text = "Read";
             this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // btnWrite
             // 
@@ -102,7 +104,7 @@
             this.Controls.Add(this.btnWrite);
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.genderCmBox);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Population Handler";
@@ -115,7 +117,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox genderCmBox;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btnRead;
         private System.Windows.Forms.Button btnWrite;
