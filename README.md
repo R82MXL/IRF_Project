@@ -20,6 +20,7 @@ A feladatban egy egyszerű népesség kezelő kerül megvalósításra a fent me
 
 Egy .csv file kerül importálásra, ami kétféleképpen történhet meg.
 A file-ban emberek adatai szerepelnek az alábbiaknak megfelelően:
+
 	Keresztnév, Vezetéknév, Kor, Nem, Megye, Város
 
 Alapértelmezetten egy timer segítségével, amely egy kódba égetett útvonalról olvassa be az adatok.
