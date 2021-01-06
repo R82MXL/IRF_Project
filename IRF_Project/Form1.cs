@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 using CsvHelper;
 using IRF_Project.Entities;
@@ -19,6 +20,23 @@ namespace IRF_Project
         public Form1()
         {
             InitializeComponent();
+            SetTimer();
+        }
+
+        private void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            if (dataGridView.Rows.Count == 0)
+            {
+                readCsvFromLocalhost();
+            }
+        }
+
+        public void SetTimer()
+        {
+            System.Timers.Timer aTimer = new System.Timers.Timer();
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            aTimer.Interval = 5000;
+            aTimer.Enabled = true;
         }
 
         private void btnWrite_Click(object sender, EventArgs e)
@@ -128,7 +146,8 @@ namespace IRF_Project
                 CsvReader csv = new CsvReader(csvFile);
                 csv.Configuration.IgnoreHeaderWhiteSpace = true;
                 personList = csv.GetRecords<Person>().ToList();
-                dataGridView.DataSource = personList;
+                //dataGridView.DataSource = personList;
+                dataGridView.Invoke(new Action(() => dataGridView.DataSource = personList));
             }
         }
 
