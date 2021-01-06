@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace IRF_Project.Entities
 {
-    class Gender
+    public class Gender
     {
+        public int id { get; set; }
+        public string genderName { get; set; }
     }
 }
