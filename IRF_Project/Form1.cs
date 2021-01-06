@@ -188,5 +188,19 @@ namespace IRF_Project
 
             dataGridView.DataSource = dt;
         }
+
+        private void btnExcelExport_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.Rows.Count > 0)
+            {
+                ExcelExport ex = new ExcelExport();
+                ex.SaveExcel(dataGridView);
+            }
+            else
+            {
+                MessageBox.Show("No Record To Export !", "Info");
+            }
+
+        }
     }
 }
