@@ -84,6 +84,7 @@
             this.btnWrite.TabIndex = 4;
             this.btnWrite.Text = "Write to CSV";
             this.btnWrite.UseVisualStyleBackColor = true;
+            this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
             // 
             // btnExcelExport
             // 
@@ -108,6 +109,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Population Handler";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
