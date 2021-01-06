@@ -2,13 +2,18 @@
 R82MXL
 
 Megvalósítandó tételek:
+
 Adatok importálása
+
 	A) Olvasás CSV fájlból
 Adatfeldolgozás
+
 	A) LINQ lekérdezés használata legalább egy WHERE feltétellel
 Adatok exportálása / megjelenítése
+
 	B) Formázott Excel létrehozása a rendelkezésre álló adatokból
 Általános elemek
+
 	D) Timer használata
 
 A feladatban egy egyszerű népesség kezelő kerül megvalósításra a fent megadott tételek figyelembevételével.
